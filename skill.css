@@ -1,0 +1,311 @@
+/* 1. VARIABEL & RESET */
+:root {
+    --primary-text: #111b21;
+    --secondary-text: #3b4a54;
+    --muted-text: #667781;
+    --white: #ffffff;
+    --card-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    
+    /* Warna Background Section */
+    --color-pink: #f6a7dd;
+    --color-biru: #e3f2fd;
+    --color-ungu: #e7a2f9;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    body {
+  padding-top: calc(var(--navbar-height) + 20px); 
+}
+    color: var(--primary-text);
+    line-height: 1.5;
+}
+
+/* 2. LAYOUT UTAMA */
+.skill-section {
+    padding: 80px 5%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    gap: 60px;
+    align-items: center; /* Membuat konten kiri & kanan sejajar tengah secara vertikal */
+}
+
+/* 3. BAGIAN KIRI (Teks & Navigasi) */
+.content-left {
+    flex: 0 0 400px; /* Lebar teks tetap agar tidak gepeng */
+}
+
+.content-left h1 {
+    font-size: 3.5rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+    line-height: 1.1;
+    letter-spacing: -1px;
+}
+
+.content-left p {
+    font-size: 1.25rem;
+    color: var(--secondary-text);
+    margin-bottom: 30px;
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 12px;
+}
+
+.btn-nav {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    background: var(--white);
+    cursor: pointer;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.btn-nav:hover {
+    background-color: #f0f0f0;
+    transform: scale(1.05);
+}
+
+/* 4. BAGIAN KANAN (Slider Kartu) */
+.content-right {
+    flex: 1;
+    display: flex;
+    gap: 24px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none; /* Firefox */
+    padding: 20px 0;
+}
+
+.content-right::-webkit-scrollbar {
+    display: none; /* Chrome/Safari */
+}
+
+.card {
+    flex: 0 0 380px; /* Lebar kartu tetap */
+    background: var(--white);
+    padding: 40px;
+    border-radius: 28px;
+    box-shadow: var(--card-shadow);
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Elemen di dalam Kartu */
+/* Style dasar badge tetap satu */
+.badge {
+    align-self: flex-start;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* Variasi Warna */
+.badge-ungu { background-color:var(--color-pink); color: #64436e; } /*Skill dari kerja*/
+.badge-biru  { background-color: var(--color-biru); color: #1976d2; } /*Skill dari Seminar atau lainya*/
+.badge-pink  { background-color: var(--color-ungu); color: #c2185b; } /*Skill dari Les atau sekolah*/
+
+.card h3 {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--muted-text);
+    margin-bottom: 5px;
+}
+
+.card h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.card p {
+    font-size: 1rem;
+    color: var(--secondary-text);
+    flex-grow: 1; /* Membuat teks mengisi ruang agar tombol app store sejajar di bawah */
+    margin-bottom: 20px;
+}
+
+.card img {
+    width: 90%;       /* Gambar akan selebar kartu */
+    height: auto;      /* Tinggi otomatis agar tidak gepeng */
+    max-height: 200px; /* Batasi tinggi maksimal agar kartu tidak terlalu panjang */
+    object-fit: contain; /* Menjaga proporsi gambar agar tidak terpotong */
+    border-radius: 8px;  /* Opsional: agar sudut gambar agak bulat */
+    margin-top: 1px;
+}
+
+.requirements {
+    font-size: 0.85rem;
+    color: var(--muted-text);
+    margin-bottom: 15px;
+}
+
+.app-store-btn img {
+    height: 40px;
+    display: block;
+}
+
+/* 5. VARIASI WARNA SECTION */
+.bg-pink { background-color: var(--color-pink); }
+.bg-biru { background-color: var(--color-biru); }
+.bg-ungu { background-color: var(--color-ungu); }
+
+/* Responsif Mobile */
+@media (max-width: 992px) {
+    .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .content-left {
+        flex: 1;
+        width: 100%;
+    }
+    .card {
+        flex: 0 0 300px; /* Kartu lebih kecil di layar kecil */
+    }
+}
+
+/* ============================================================
+   MEDIA QUERY UNTUK MOBILE (Maksimal 768px)
+   ============================================================ */
+
+@media (max-width: 768px) {
+    
+    /* 1. RESET BODY */
+    body {
+        overflow-x: hidden; /* Mencegah scroll horizontal yang merusak tampilan */
+    }
+
+    /* 2. NAVBAR REFORM */
+    .navbar {
+        padding: 10px 20px; /* Kurangi padding samping */
+        height: auto; /* Biarkan tinggi menyesuaikan konten */
+        min-height: 70px;
+        flex-direction: column; /* Tumpuk Logo dan Menu */
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .logo {
+        font-size: 20px !important; /* Perkecil nama agar tidak memenuhi layar */
+        text-align: center;
+    }
+
+    .menu {
+        gap: 8px; /* Perkecil jarak antar link */
+        justify-content: center;
+        width: 100%;
+        flex-wrap: wrap; /* Agar menu turun ke bawah jika tidak muat */
+    }
+
+    .menu li a {
+        padding: 5px 10px;
+        font-size: 11px; /* Font kecil agar muat banyak menu */
+    }
+
+    /* 3. ABOUT SECTION (Perbaikan Teks Terpotong) */
+    .about {
+        grid-template-columns: 1fr; /* Stack vertikal */
+        margin-top: 120px; /* Beri ruang agar tidak tertutup Navbar Fixed */
+        height: auto;
+    }
+
+    .about-text {
+        padding: 40px 25px; /* Kurangi padding besar dari versi desktop */
+        text-align: center;
+    }
+
+    .about-title {
+        font-size: 38px; /* Kecilkan judul besar "ABOUT ME" */
+        -webkit-text-stroke: 1.5px #f807c4; /* Tipiskan outline */
+    }
+
+    .intro {
+        font-size: 22px;
+        margin-top: 0;
+        margin-bottom: 10px;
+    }
+
+    /* 4. SKILL SECTION (Slider Kartu) */
+    .skill-section {
+        padding: 40px 20px;
+    }
+
+    .container {
+        flex-direction: column; /* Teks di atas, Slider di bawah */
+        gap: 20px;
+    }
+
+    .content-left {
+        flex: 0 0 auto;
+        width: 100%;
+        text-align: center;
+    }
+
+    .content-left h1 {
+        font-size: 2rem; /* Kecilkan judul "Technical Skills" */
+    }
+
+    .content-left p {
+        font-size: 1rem;
+    }
+
+    .nav-buttons {
+        justify-content: center; /* Panah navigasi di tengah */
+        margin-bottom: 10px;
+    }
+
+    /* KARTU SKILL (Sangat Penting!) */
+    .card {
+        flex: 0 0 280px; /* Lebar kartu tetap yang aman untuk semua HP */
+        padding: 25px;
+        border-radius: 20px;
+    }
+
+    .card h2 {
+        font-size: 1.4rem;
+    }
+
+    .card img {
+        max-height: 150px; /* Batasi tinggi gambar agar kartu tidak kepanjangan */
+    }
+
+    /* 5. ELEMEN TAMBAHAN */
+    .arrow {
+        display: none; /* Sembunyikan panah dekoratif di About karena sering menabrak teks */
+    }
+}
+
+/* Penyesuaian khusus untuk HP Sangat Kecil (Layar < 380px) */
+@media (max-width: 380px) {
+    .card {
+        flex: 0 0 240px; /* Perkecil kartu lagi agar tidak overflow */
+    }
+    
+    .about-title {
+        font-size: 30px;
+    }
+}

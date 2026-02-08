@@ -1,0 +1,104 @@
+/*Body*/
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-color: #fde6f3; 
+    overflow-x: hidden; /* Mencegah scroll ke samping yang bikin putih di kanan */
+}
+
+/* SECTION */
+.principle::before {
+  content: "";
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  background: radial-gradient(circle, #d946aa, transparent 70%);
+  opacity: 0.4;
+  z-index: 0;
+}
+
+.principle-title {
+    margin-bottom: 1px;   /* default biasanya 30–40px */
+}
+
+.principle {
+  height: 100vh;
+  padding-top: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/*GARIS BATAS*/
+.divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1px 0 1px;
+    gap: 5px;
+}
+
+.divider span {
+    width: 200px;
+    height: 8px;
+    background: #d946aa;
+    opacity: 0.7;
+}
+
+.divider i {
+    font-style: normal;
+    font-size: 40px;
+    color: #d946aa;
+}
+
+/* CONTENT */
+.content {
+  text-align: center;
+  max-width: 700px;
+}
+
+.title {
+  font-family: 'Pacifico', cursive;
+  font-size: 52px;
+  margin-bottom: 10px;
+  color:#7e22ce;
+}
+
+.quote {
+  font-size: 24px;
+  line-height: 1.9;
+}
+
+/* ARROWS */
+
+.arrow {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-top: 10px solid #c084fc;
+    border-right: 10px solid #c084fc;
+    opacity: 1;
+    transition: 0.3s;
+    bottom: 45%;
+    transform: translateY(-50%);
+}
+
+.arrow.left {
+    transform:  rotate(-135deg) scale(1.1);
+    left: 40px;
+    
+
+} 
+
+.arrow.right {
+    transform: rotate(45deg) scale(1.1);
+    right: 40px;
+}
+
+.arrow:hover {
+    opacity: 1;
+    border-color: #9333ea;
+    transform: scale(1.1) rotate(var(--rotate));
+}

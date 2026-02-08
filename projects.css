@@ -1,0 +1,135 @@
+
+
+html {
+     scroll-behavior: smooth;
+    scroll-padding-top: 80px; 
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-color: #fde6f3; 
+    overflow-x: hidden; 
+    padding-top: 80px; 
+}
+
+.project-header{
+    font-family: 'Pacifico', cursive;
+    color: #b408da;
+    font-size: 30px;
+}
+
+.project-showcase {
+    background: #fff;
+    padding: 40px 20px;
+    border-radius: 20px;
+    margin: 20px 0;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.project-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.project-visual { flex: 1; min-width: 300px; }
+.project-info { flex: 1.2; min-width: 300px; }
+
+.video-wrapper {
+    border-radius: 15px;
+    overflow: hidden;
+    border: 3px solid #fce7f3;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.project-title {
+    font-size: 24px;
+    color: #b408da;
+    margin-bottom: 5px;
+    line-height: 1.2;
+}
+
+.project-tagline {
+    color: #d946aa;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.btn-main, .btn-sub {
+    display: inline-block;
+    padding: 10px 15px;
+    margin: 10px 5px 0 0;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.btn-main { background: #d946aa; color: white; }
+.btn-sub { border: 2px solid #d946aa; color: #d946aa; }
+
+.highlight-item {
+    margin-top: 15px;
+    padding: 10px;
+    background: #fdf2f8;
+    border-left: 4px solid #d946aa;
+    border-radius: 4px;
+}
+/* Container utama untuk langkah-langkah proses */
+.process-tabs {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+/* Kotak tiap langkah (Step) */
+.step {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 15px;
+    background-color: #ffffff; /* Warna putih agar kontras dengan background body */
+    border-radius: 12px;
+    border: 1px solid #fce7f3; /* Outline pink sangat muda */
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+}
+
+/* Efek saat mouse mendekat (Hover) */
+.step:hover {
+    transform: translateX(10px); /* Bergeser sedikit ke kanan */
+    background-color: #fdf2f8; /* Berubah jadi pink pucat */
+    border-color: #d946aa;
+    box-shadow: 0 4px 12px rgba(217, 70, 170, 0.1);
+}
+
+/* Styling Icon (Emoji) */
+.step-icon {
+    font-size: 24px;
+    background: #fce7f3;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Styling Teks di dalam step */
+.step-text strong {
+    display: block;
+    font-size: 16px;
+    color: #d946aa; /* Warna judul phase */
+    margin-bottom: 4px;
+}
+
+.step-text p {
+    margin: 0;
+    font-size: 14px;
+    color: #555;
+    line-height: 1.5;
+}

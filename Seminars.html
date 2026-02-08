@@ -1,0 +1,165 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Formal Education</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="seminars.css">
+    <link rel="stylesheet" href="navbar.css"> 
+</head>
+<body>
+
+<!-- NAVBAR -->
+<div id="navbar"></div>
+<script>
+fetch("navbar.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("navbar").innerHTML = data;
+
+    const currentPage = window.location.pathname.split("/").pop();
+
+    document.querySelectorAll(".navbar a").forEach(link => {
+      const pages = link.getAttribute("data-pages").split(",");
+
+      if (pages.includes(currentPage)) {
+        link.classList.add("active");
+      }
+    });
+  });
+</script>
+
+<!-- Body -->
+<div class="content">
+  
+
+ <a href="formal.html" class="arrow left"></a> <!-- ini anak panah kiri-->
+       
+
+<div class="scroll-container closed">
+  <div class="scroll-roller top"></div>
+  <div class="scroll-content-wrapper">
+    <div class="scroll-paper">
+
+        <h1>International Webinar: AI and Blockchain</h1>
+        <h3>Universitas Trisakti</h3>
+        <h4>February 2025</h4>
+        <p>
+        Exploring how AI and Blockchain technology can be integrated to enhance intelligence and maintain transparency within management systems.
+        </p>
+        <a href="https://drive.google.com/file/d/1cqLbbi4NjNdvLnbhr0XZlC9H567mETZg/view?usp=sharing" target="_blank" class="btn-view">View Certificate</a>
+
+        <hr class="scroll-divider">
+
+        <h1>National Webinar: Analyzing Data Security Issues in Cloud Computing</h1>
+        <h3>Diklat.co</h3>
+        <h4>December 2024</h4>
+        <p>
+        Participated in a national webinar focused on analyzing and addressing critical data security issues within cloud computing environments.
+        </p>
+        <a href="https://drive.google.com/file/d/1FZY0QRsTtnesn2MvVQYa0naxCSIE8gb2/view?usp=sharing" target="_blank" class="btn-view">View Certificate</a>
+
+        <hr class="scroll-divider">
+
+        <h1>Optimizing Research Skills: From Referencing to Data Analysis</h1>
+        <h3>Universitas Jenderal Achmad Yani</h3>
+        <h4>September 2024</h4>
+        <p>
+        Advanced workshop on research methodology, focusing on optimization of data referencing and systematic analysis for academic projects.
+        </p>
+        <a href="https://drive.google.com/file/d/1wv3h2ekdYCnFCT6u7tEan1ljrMrqbXh-/view?usp=sharing" target="_blank" class="btn-view">View Certificate</a>
+
+        <hr class="scroll-divider">
+
+        <h1>3rd International Conference on Creative Communication and Innovative Technology (ICCIT)</h1>
+        <h3>Universitas Raharja (Supported by IEEE Indonesia Section)</h3>
+        <h4>August 2024</h4>
+        <p>
+        Participated in an international forum focusing on innovation in technology and creative communication, supported by the IEEE Indonesia Section.
+        </p>
+        <a href="https://drive.google.com/file/d/1B8iDc1RCdxcU6UKr94_HOV6l4y8UbjBf/view?usp=sharing" target="_blank" class="btn-view">View Certificate</a>
+
+        <hr class="scroll-divider">
+
+        <h1>Cyber Security Business Seminar</h1>
+        <h3>Institut Bisnis dan Multimedia ASMI</h3>
+        <h4>July 2024</h4>
+        <p>
+        Discussing the importance of personal data protection through cyber security measures and digital literacy to mitigate modern digital threats.
+        </p>
+        <a href="https://drive.google.com/file/d/1riPFc453iXFMl0pUVxfX2J77E3o7kjMw/view?usp=sharing" target="_blank" class="btn-view">View Certificate</a>
+
+        <hr class="scroll-divider">
+
+        <h1>National Webinar: Artificial Intelligence in Automation and Industry 4.0</h1>
+        <h3>Universitas Peradaban</h3>
+        <h4>June 2024</h4>
+        <p>
+        Focusing on the role of Artificial Intelligence in industrial automation and the advancements of the Industry 4.0 era.
+        </p>
+        <a href="https://drive.google.com/file/d/14vu5wGNCb8KhHJPpLw2CoxeD2Yq8xhLm/view?usp=sharing" target="_blank" class="btn-view">View Certificate</a>
+
+        <hr class="scroll-divider">
+
+        <h1>Webinar: Challenges of AI Role for Software Developers</h1>
+        <h3>Universitas Harapan Bangsa</h3>
+        <h4>May 2024</h4>
+        <p>
+        Organized by the Information Technology Study Program, focusing on the evolving role and challenges of AI for modern software developers.
+        </p>
+        <a href="https://drive.google.com/file/d/1rdSJ6IYP3riTNbHEPerB0z53mN_KJE8M/view?usp=sharing" target="_blank" class="btn-view">View Certificate</a>
+
+        <hr class="scroll-divider">
+
+        <h1>AI Coaching for Scopus Research</h1>
+        <h3>PT Mukhlisina Revolution Center</h3>
+        <h4>January 2024</h4>
+        <p>
+        Intensive training on using AI tools for data analysis, prompt engineering, and international scientific publication.
+        </p>
+        <a href="https://drive.google.com/file/d/1Stb3-GLZGJlgby-6i8GDAXaSIkCXNqFN/view?usp=sharing" target="_blank" class="btn-view">View Certificate</a>
+
+        <hr class="scroll-divider">
+
+        <h1>International Seminar: Beyond AI for "Indonesia Emas 2045"</h1>
+        <h3>University of Raharja</h3>
+        <h4>December 2023</h4>
+        <p>
+        Featuring international speakers to discuss the future of AI technology in supporting Indonesia's vision for 2045.
+        </p>
+        <a href="https://drive.google.com/file/d/1eyAmt_li1wCjKvvKcUwMb16cpp_aHlPO/view?usp=sharing" target="_blank" class="btn-view">View Certificate</a>
+
+        <hr class="scroll-divider">
+
+        <h1>Webinar: A Better Future with AI in The New Era</h1>
+        <h3>Universitas Bina Sarana Informatika</h3>
+        <h4>May 2023</h4>
+        <p>
+        Focusing on the transformative role of Artificial Intelligence in creating a better future and its implementation in the modern era.
+        </p>
+        <a href="https://drive.google.com/file/d/1YXb44OsCnTTJrUXLYHZRR0QVRtBYjW98/view?usp=sharing" target="_blank" class="btn-view">View Certificate</a>
+
+    </div>
+   </div>
+  <div class="scroll-roller bottom"></div>
+</div>
+ <a href="learning.html" class="arrow right"></a> <!-- ini anak panah Kanan-->
+   
+</div>
+
+<script>
+  // Mengambil semua elemen dengan class .scroll-container
+  const allScrolls = document.querySelectorAll('.scroll-container');
+  
+  allScrolls.forEach(scroll => {
+    scroll.addEventListener('click', function() {
+      // Toggle class 'closed' pada elemen yang diklik
+      this.classList.toggle('closed');
+    });
+  });
+</script>
+</body>
+
+</html>

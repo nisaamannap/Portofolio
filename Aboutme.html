@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About Me</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="aboutme.css">
+    <link rel="stylesheet" href="navbar.css"> 
+
+
+</head>
+
+<body>
+    
+<!-- NAVBAR -->
+<div id="navbar"></div>
+<script>
+fetch("navbar.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("navbar").innerHTML = data;
+
+    const currentPage = window.location.pathname.split("/").pop();
+
+    document.querySelectorAll(".navbar a").forEach(link => {
+      const pages = link.getAttribute("data-pages").split(",");
+
+      if (pages.includes(currentPage)) {
+        link.classList.add("active");
+      }
+    });
+  });
+</script>
+
+
+<!-- ABOUT SECTION -->
+<section class="about">
+    
+    
+    <!-- LEFT CONTENT -->
+    <div class="about-text">
+        <a href="vision.html" class="arrow left"></a>
+       
+        <h3 class="intro">Introducing</h3>
+        <h1 class="about-title">ABOUT ME</h1>
+
+        <p>
+            Helo! My name Nisa Amanna Pusponegoro,  
+            You can call me <b>“Nisa”</b>.  
+            I was born in Jakarta on 30<sup>th</sup> September 2001.
+           I am a Computer Science graduate from Universitas Raharja, majoring in Software Engineering with a GPA of 3.76.</p>
+         <p>I have a strong interest in technology and data. My experience has helped me develop skills in data management, workflow automation, and systematic documentation. I am also proficient in using Microsoft Excel for data processing and managing operational systems.</p>
+          <p>I am a fast learner, adaptable, and I enjoy working in a team. Whether it is a technical IT role or an administrative position, I am always committed to giving my best and helping the company work more efficiently."</p>
+
+    </div>
+
+    <!-- RIGHT CONTENTl -->
+    <div class="about-photo-wrapper">
+
+      <div class="photo-frame">
+        <img src="Foto/Foto pas.jpg" alt="Foto Nisa">
+    </div>
+
+    <div class="photo-info">
+        <b>Nisa Amanna Pusponegoro, S.Kom</b><br>
+        Teknik Informatika<br>
+        Software Engineering
+    </div>
+        <a href="Myprinciple.html" class="arrow right"></a> 
+    </div>
+        
+</div>
+</section>
+
+</body>
+</html>

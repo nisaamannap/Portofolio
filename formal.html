@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Formal Education</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="formal.css">
+    <link rel="stylesheet" href="navbar.css"> 
+</head>
+<body>
+
+<!-- NAVBAR -->
+<div id="navbar"></div>
+<script>
+fetch("navbar.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("navbar").innerHTML = data;
+
+    const currentPage = window.location.pathname.split("/").pop();
+
+    document.querySelectorAll(".navbar a").forEach(link => {
+      const pages = link.getAttribute("data-pages").split(",");
+
+      if (pages.includes(currentPage)) {
+        link.classList.add("active");
+      }
+    });
+  });
+</script>
+
+<div class="content">
+  
+
+ <a href="learning.html" class="arrow left"></a>
+       
+
+<div class="scroll-container closed">
+  <div class="scroll-roller top"></div>
+  <div class="scroll-content-wrapper">
+  <div class="scroll-paper">
+    <h1>Bitas Course</h1>
+    <h4>2025</h4>
+    <p>
+      Intensive training on building web systems from scratch. Developed a functional website project as a technical graduation requirement.
+    </p>
+    <a href="https://drive.google.com/drive/folders/1v0_BWbDtaJBvvLPOHTth4CKrJlfzazRI?usp=drive_link" target="_blank" class="btn-view">View Documentation</a>
+
+    <hr class="scroll-divider"> <h1>Life Skills Training (PKH)</h1>
+    <h3>Pemerintah Kota Tegal</h3>
+    <h4>2018</h4>
+    <p>
+      Focused on culinary business fundamentals, including product manufacturing, small-scale business management, and marketing strategies.
+    </p>
+    <a href="https://drive.google.com/drive/folders/1UaFiMFsNa0OCwtcSVrIot6Ic8dnkrNAb?usp=drive_link" target="_blank" class="btn-view">View Documentation</a>
+</div>
+   </div>
+  <div class="scroll-roller bottom"></div>
+</div>
+ <a href="Seminars.html" class="arrow right"></a> 
+   
+</div>
+
+<script>
+  // Mengambil semua elemen dengan class .scroll-container
+  const allScrolls = document.querySelectorAll('.scroll-container');
+  
+  allScrolls.forEach(scroll => {
+    scroll.addEventListener('click', function() {
+      // Toggle class 'closed' pada elemen yang diklik
+      this.classList.toggle('closed');
+    });
+  });
+</script>
+</body>
+
+</html>

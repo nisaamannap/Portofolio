@@ -1,0 +1,127 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Formal Education</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="projects.css">
+    <link rel="stylesheet" href="navbar.css"> 
+</head>
+<body>
+
+<!-- NAVBAR -->
+<div id="navbar"></div>
+<script>
+fetch("navbar.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("navbar").innerHTML = data;
+
+    const currentPage = window.location.pathname.split("/").pop();
+
+    document.querySelectorAll(".navbar a").forEach(link => {
+      const pages = link.getAttribute("data-pages").split(",");
+
+      if (pages.includes(currentPage)) {
+        link.classList.add("active");
+      }
+    });
+  });
+</script>
+
+<!-- Body -->
+<div class="project-header">
+        <h1>Featured Project</h1>
+        <div class="header-line"></div>
+    </div>
+    
+<section class="project-showcase">
+    
+
+    <div class="project-container">
+        <div class="project-visual">
+            <div class="video-wrapper">
+                <iframe src="https://drive.google.com/file/d/1TaFnWt1N-uVsrqR0B_6et6igl6D-uttL/preview" width="100%" height="315" allow="autoplay"></iframe>
+            </div>
+            <div class="project-action-buttons">
+                <a href="https://drive.google.com/file/d/1Oi9PdRRUol1izHUU1FKtptjJ4E6b4Qur/view?usp=drive_link" target="_blank" class="btn-main">
+                    <span class="icon">📄</span> Read Full Thesis
+                </a>
+                <a href="https://drive.google.com/file/d/1TdNhoxNKhxq0AsLdoVPxCLUBeacsucJK/view?usp=drive_link" target="_blank" class="btn-sub">
+                    <span class="icon">📦</span> Download Source Code (ZIP)
+                </a>
+            </div>
+        </div>
+
+        <div class="project-info">
+            <h2 class="project-title">Product Data Migration System: E-Katalog to INAPROC Automation</h2>
+            <p class="project-tagline">RPA Implementation & Imgur Image Conversion for PT. SAE</p>
+            
+            <div class="project-description">
+                <p>
+                    Developed an automated workflow to streamline the migration of product data from E-Katalog to INAPROC systems. 
+                    This system features automated Imgur image conversion to ensure data compatibility and efficiency.
+                </p>
+            </div>
+
+            <div class="project-highlights">
+                <div class="highlight-item">
+                    <strong>Tech Stack:</strong>
+                    <span>Ui.Vision RPA, HTML/JavaScript, Imgur API Integration</span>
+                </div>
+                <div class="highlight-item">
+                    <strong>Core Result:</strong>
+                    <span>Reduced manual data entry time by automating repetitive migration tasks and image handling.</span>
+                </div>
+            </div>
+                        <div class="process-tabs">
+                            <div class="step">
+                                <span class="step-icon">📋</span>
+                                <div class="step-text">
+                                    <strong>Phase 1: Planning</strong>
+                                    <p>
+                                        nvolves designing proposed procedures, system diagrams, database structures, program interfaces, configurations, testing schedules, and cost estimations to ensure efficient automation of product image migration from E-Katalog to INAPROC.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <span class="step-icon">📐</span>
+                                <div class="step-text">
+                                    <strong>Phase 2: System Design</strong>
+                                    <p>
+                                        The system design in mine thesis uses a waterfall-based structured approach with UML diagrams, database modeling, and web interface planning to support automated product image migration from E-Katalog to INAPROC.
+
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <span class="step-icon">⚙️</span>
+                                <div class="step-text">
+                                    <strong>Phase 3: Development</strong>
+                                    <p>
+                                        The development in mine thesis uses the waterfall model, applying sequential stages of analysis, design, implementation, testing, and evaluation to build the automated migration system.
+
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <span class="step-icon">✅</span>
+                                <div class="step-text">
+                                    <strong>Phase 4: Testing & Result</strong>
+                                    <p>
+                                        The testing and results in mine thesis use system functionality (Blackbox) testing, schedule evaluation, and cost estimation to validate efficiency and accuracy improvements in automated product image migration.
+
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+        </div>
+    </div>
+</section>
+
+</body>
+
+</html>

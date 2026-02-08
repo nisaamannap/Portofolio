@@ -1,0 +1,78 @@
+/* NAVBAR */
+.navbar {
+    display: flex;
+    flex-direction: row; /* Pastikan horizontal */
+    flex-wrap: nowrap; /* Jangan wrap ke bawah */
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background: #fde6f3;
+    border-bottom: 6px solid #d946aa;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Pastikan lebar penuh */
+    box-sizing: border-box; /* Agar padding tidak bermasalah */
+    height: 90px;
+    overflow: hidden;
+}
+
+.logo {
+    font-family: 'Pacifico', cursive;
+    font-size: 20px;
+    color: #7e22ce;
+    margin: 0; /* Reset margin jika perlu */
+    line-height: 1.2; /* Tambahan untuk alignment */
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+}
+.menu li a {
+  text-decoration: none;
+  color: #000;
+  padding: 10px 18px;
+  border-radius: 5px;
+  transition: 0.3s;
+  display: block;
+}
+
+.menu li a:hover {
+  background: #d946aa;
+  color: #fff;
+}
+
+.menu li a.active {
+  background: #d946aa;
+  color: #fff;
+}
+
+.navbar a,
+.navbar a:visited,
+.navbar a:hover,
+.navbar a:active {
+  color: #000;
+  text-decoration: none;
+}
+
+
+/* Media query untuk layar kecil (mobile) */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 10px 20px; /* Kurangi padding */
+        flex-direction: row; /* Tetap horizontal, atau ubah ke column jika mau vertikal */
+    }
+    
+    .menu {
+        gap: 15px; /* Kurangi gap */
+    }
+    
+    .logo {
+        font-size: 22px; /* Kurangi ukuran font */
+    }
+}

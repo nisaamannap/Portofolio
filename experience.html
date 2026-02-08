@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Work Experience</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="experience.css">
+    <link rel="stylesheet" href="navbar.css"> 
+</head>
+<body>
+
+<!-- NAVBAR -->
+<div id="navbar"></div>
+<script>
+fetch("navbar.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("navbar").innerHTML = data;
+
+    const currentPage = window.location.pathname.split("/").pop();
+
+    document.querySelectorAll(".navbar a").forEach(link => {
+      const pages = link.getAttribute("data-pages").split(",");
+
+      if (pages.includes(currentPage)) {
+        link.classList.add("active");
+      }
+    });
+  });
+</script>
+
+
+<div class="info-panel" id="infoPanel">
+  <h2 id="infoTitle"></h2>
+  <p id="infoCompany"></p>
+  <p id="infoYear"></p>
+</div>
+
+
+<!-- GAME AREA -->
+<div class="game">
+  <div class="world">
+
+  <div class="layer sky">
+  </div>
+
+  <div class="layer mountain">
+  </div>
+
+  <div class="layer forest">
+  </div>
+
+  <div class="layer city">
+  </div>
+
+  <div class="layer river">
+  </div>
+
+  <div class="layer road">
+  </div>
+ 
+
+   <img src="experience/mayora.png" class="building" data-id="1" >
+    <img src="experience/Gedung Jamur.png" class="building" data-id="2">
+    <img src="experience/gedung ungu.png" class="building" data-id="3">
+
+    <img src="experience/flag.png"  id="finishFlag">
+
+
+    </div>
+  
+
+        
+  <!-- CHARACTER -->
+        <div id="character">
+        <div id="charFlip">
+            <img id="charSprite" src="experience/char.png"/>
+        </div>
+        </div>
+
+
+</div>
+
+
+
+<div id="rotate-device">
+    <div class="message">
+        <p>🔄 Harap putar HP kamu ke Landscape (Miring) untuk bermain!</p>
+    </div>
+</div>
+
+
+<!-- CONTROLS -->
+<div class="controls">
+  <button id="left">Jalan ke kiri ◀</button>
+  <button id="right">▶ Jalan ke kanan</button>
+</div>
+
+<script src="experience.js"></script>
+</body>
+
+</html>

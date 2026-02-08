@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Principle of Life</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="principle.css">
+  <link rel="stylesheet" href="navbar.css"> 
+</head>
+<body>
+<!-- NAVBAR -->
+<div id="navbar"></div>
+<script>
+fetch("navbar.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("navbar").innerHTML = data;
+
+    const currentPage = window.location.pathname.split("/").pop();
+
+    document.querySelectorAll(".navbar a").forEach(link => {
+      const pages = link.getAttribute("data-pages").split(",");
+
+      if (pages.includes(currentPage)) {
+        link.classList.add("active");
+      }
+    });
+  });
+</script>
+
+
+
+<!-- CONTENT -->
+<section class="principle">
+
+  <a href="Aboutme.html" class="arrow left"></a>
+
+  <div class="content">
+    <h1 class="title">My Principle of Life</h1>
+    
+    <div class="divider">
+    <span></span>
+    <i>🌸</i>
+    <span></span>
+    </div>
+
+
+    <p class="quote">
+      <b>Happiness through Authenticity and Purpose.</b><br>
+        I believe that loving what you do is the key to happiness, and happiness is the real engine of success. In everything I do, I prioritize honesty, logical thinking, and efficiency. I don’t just follow rules, I seek to understand them so I can provide the best results.
+      
+    </p>
+  </div>
+
+  <a href="vision.html" class="arrow right"></a>
+
+</section>
+
+</body>
+</html>

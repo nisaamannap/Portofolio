@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Hard Skill</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="skill.css">
+<link rel="stylesheet" href="navbar.css"> 
+</head>
+
+<body>
+  
+<!-- NAVBAR -->
+<div id="navbar"></div>
+<script>
+fetch("navbar.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("navbar").innerHTML = data;
+
+    const currentPage = window.location.pathname.split("/").pop();
+
+    document.querySelectorAll(".navbar a").forEach(link => {
+      const pages = link.getAttribute("data-pages").split(",");
+
+      if (pages.includes(currentPage)) {
+        link.classList.add("active");
+      }
+    });
+  });
+</script>
+
+<!--Body-->
+    <section class="skill-section bg-pink">
+        <div class="container">
+            <div class="content-left">
+                <h1>Technical Skills</h1>
+                <p>My ability to process data, automate workflows, and build functional web interfaces.</p>
+                <div class="nav-buttons">
+                    <button class="btn-nav" onclick="scrollSlide('slider1', -400)"> < </button>
+                    <button class="btn-nav" onclick="scrollSlide('slider1', 400)"> > </button>
+                </div>
+            </div>
+            <div class="content-right" id="slider1">
+                <div class="card">
+                    <span class="badge badge-ungu">Intership Data Analysis PT. Sariling</span>
+                    <h3>Data</h3>
+                    <h2>Data Processing & Migration</h2>
+                    <p>
+                      Handling large data sets, ensuring accuracy during system migration, and validating data formats (Excel/CSV).
+
+                    </p>
+                </div>
+                 <div class="card">
+                    <span class="badge badge-ungu">Intership Data Analysis PT. Sariling</span>
+                    <h3>Data</h3>
+                    <h2>Workflow Automation</h2>
+                    <p>
+                      Basic Robotic Process Automation (RPA) using Ui.Vision to streamline repetitive tasks and product uploads.
+
+                    </p>
+                </div>
+                <div class="card">
+                    <span class="badge badge-pink">Course BITAS</span>
+                    <h3>Front-end</h3>
+                    <h2>Front-End Development</h2>
+                    <p>
+                      Building interactive web elements using HTML, CSS, and JavaScript (DOM Manipulation).
+                    </p>
+                </div>
+                <div class="card">
+                    <span class="badge badge-pink">Course BITAS</span>
+                    <h3>Data & System</h3>
+                    <h2>Database & System Design</h2>
+                    <p>
+                   Skilled in designing ERD (Entity Relationship Diagram) and Flowcharts to map out data structures and business processes effectively.   
+                    </p>
+                </div>
+                <div class="card">
+                    <span class="badge badge-pink">Course BITAS</span>
+                    <h3>Analysis</h3>
+                    <h2>System Analysis</h2>
+                    <p>
+                  Analyzing business flows, identifying bottlenecks, and documenting operational procedures (SOP).    
+                    </p>
+                </div>
+                <div class="card">
+                    <span class="badge badge-ungu">Intership Data Analysis PT. Sariling</span>
+                    <h3>Analysis</h3>
+                    <h2>E-Catalog Management</h2>
+                    <p>
+                  Managing product listings, pricing templates, and specifications for e-procurement systems (LKPP/INAPROC).
+                </p>
+                </div>
+                 <div class="card">
+                    <span class="badge badge-ungu">Office Administrator PT. Sulung</span>
+                    <h3>Accounting</h3>
+                    <h2>Basic Accounting & Bookkeeping</h2>
+                    <p>
+                      Handling petty cash, recording debit/credit transactions, and ensuring financial data accuracy for daily reports.
+                    </p>
+                </div>
+                <div class="card">
+                    <span class="badge badge-ungu">SPG Mayora group</span>
+                    <h3>Sales</h3>
+                    <h2>Customer Engagement & Promotion</h2>
+                    <p>
+                     Skilled in product presentation, handling customer inquiries, and executing promotional strategies to increase brand awareness.
+                    </p>
+                </div>
+              </div>
+        </div>
+    </section>
+
+    <section class="skill-section bg-biru">
+        <div class="container">
+            <div class="content-left">
+                <h1>Soft Skills</h1>
+                <p>The core values and mindsets that help me work effectively within a professional team. </p>
+                <div class="nav-buttons">
+                    <button class="btn-nav" onclick="scrollSlide('slider2', -400)"> < </button>
+                    <button class="btn-nav" onclick="scrollSlide('slider2', 400)"> > </button>
+                </div>
+            </div>
+            <div class="content-right" id="slider2">
+               <div class="card">
+                    <span class="badge badge-pink">University</span>
+                    <h3>Analysis</h3>
+                    <h2>Analytical Thinking</h2>
+                    <p>
+                     A logic-driven mindset focused on finding efficient solutions and understanding the 'why' behind a system.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <span class="badge badge-ungu">Office Administrator PT. Sulung</span>
+                    <h3>Analysis</h3>
+                    <h2>Collaborative & Adaptive</h2>
+                    <p>
+                     Proven ability to work without conflict, adapting quickly to team needs and changing project directions.
+                    </p>
+                </div>
+
+                 <div class="card">
+                    <span class="badge badge-ungu">Office Administrator PT. Sulung</span>
+                    <h3>Analysis</h3>
+                    <h2>Technical Communication</h2>
+                    <p>
+                     Translating complex technical processes into clear, professional documentation and reports.
+                    </p>
+                </div>
+
+                
+                 <div class="card">
+                    <span class="badge badge-pink">University</span>
+                    <h3>Analysis</h3>
+                    <h2>Authentic Learner</h2>
+                    <p>
+                    A growth mindset with a focus on honesty, integrity, and continuous self-improvement.
+                    </p>
+                </div>
+                
+                <div class="card">
+                    <span class="badge badge-ungu">SPG Mayora group</span>
+                    <h3>Sales</h3>
+                    <h2>Sales & Persuasive Communication</h2>
+                    <p>
+                      Experienced in direct sales and product promotion, developing strong communication skills to engage customers and achieve sales targets.
+                    </p>
+              </div>
+        </div>
+    </section>
+
+    <section class="skill-section bg-ungu">
+        <div class="container">
+            <div class="content-left">
+                <h1>Tools & Software</h1>
+                <p>A collection of professional tools I use to ensure efficiency and high-quality results.</p>
+                <div class="nav-buttons">
+                    <button class="btn-nav" onclick="scrollSlide('slider3', -400)"> < </button>
+                    <button class="btn-nav" onclick="scrollSlide('slider3', 400)"> > </button>
+                </div>
+            </div>
+            <div class="content-right" id="slider3">
+               <div class="card">
+                    <span class="badge badge-pink">University</span>
+                    <h3>Development Tools</h3>
+                    <h2>Visual Studio Code</h2>
+                    <p>
+                      Main editor for writing and debugging HTML, CSS, and JavaScript projects.
+
+                    </p>
+                    <a>
+                        <img src="skill/vsc.png" >
+                    </a>
+                </div>
+
+                <div class="card">
+                    <span class="badge badge-ungu">Intership Data Analysis PT. Sariling</span>
+                    <h3>Automation & Data</h3>
+                    <h2>Ui.Vision RPA</h2>
+                    <p>Automating bulk data mining and product uploads to web platforms.</p>
+                    <a>
+                        <img src="skill/UI Vision.png" >
+                    </a>
+                </div>
+
+                  <div class="card">
+                    <span class="badge badge-ungu">Intership Data Analysis PT. Sariling</span>
+                    <h3>Accounting, Automation & Data</h3>
+                    <h2>Microsoft Excel (Advanced)</h2>
+                    <p>Advanced data manipulation, financial reporting, and cleaning raw datasets.</p>
+                    <a>
+                        <img src="skill/excel.png" >
+                    </a>
+                </div>
+
+                <div class="card">
+                    <span class="badge badge-pink">University</span>
+                    <h3>Development Tools</h3>
+                    <h2>Chrome DevTools</h2>
+                   <p>Debugging web elements, inspecting network activity, and testing responsiveness.</p>
+                    <a>
+                        <img src="" >
+                    </a>
+                </div>
+
+                
+                <div class="card">
+                   <span class="badge badge-ungu">Intership Data Analysis PT. Sariling</span>
+                   <h3>Automation & Data</h3>
+                    <h2>CSV Integration.</h2>
+                    <p>Managing data exchange formats for automation scripts and database imports.</p>
+                    <a>
+                        <img src="skill/csv.png" >
+                    </a>
+                </div>
+
+                <div class="card">
+                  <span class="badge badge-pink">University</span> 
+                  <h3>Design & UI</h3>
+                    <h2>Visual Paradigm (UML)</h2>
+                    <p>Creating professional ERD and Flowcharts to visualize system architecture.</p>
+                    <a>
+                        <img src="skill/vp.png" >
+                    </a>
+                </div>
+
+                <div class="card">
+                  <span class="badge badge-pink">University</span> 
+                  <h3>Design & UI</h3>
+                    <h2>Canva</h2>
+                    <p>Designing visual assets, promotional banners, and social media content.</p>
+                    <a>
+                        <img src="skill/canva.png" >
+                    </a>
+                </div>
+
+                <div class="card">
+                  <span class="badge badge-pink">University</span> 
+                  <h3>Design & UI</h3>
+                    <h2>Figma</h2>
+                    <p>Creating UI/UX prototypes and high-fidelity designs for web applications.</p>
+                    <a>
+                        <img src="skill/figma.png" >
+                    </a>
+                </div>
+
+                 <div class="card">
+                  <span class="badge badge-pink">University</span> 
+                  <h3>Design & UI</h3>
+                    <h2>Basic UI/UX Logic</h2>
+                    <p>Implementing user-centered design principles for better website navigation.</p>
+                    <a>
+                        <img src="skill/figma.png" >
+                    </a>
+                </div>
+                
+                <div class="card">
+                   <span class="badge badge-ungu">Intership Data Analysis PT. Sariling</span>
+                   <h3>Enterprise Systems</h3>
+                    <h2>E-Katalog</h2>
+                    <p>Professional experience in government e-procurement and product listing management.</p>
+                    <a>
+                        <img src="skill/Ekatalog.png" >
+                    </a>
+                </div>
+                <div class="card">
+                   <span class="badge badge-ungu">Intership Data Analysis PT. Sariling</span>
+                   <h3>Enterprise Systems</h3>
+                    <h2>Inaproc</h2>
+                   <p>Professional experience in government e-procurement and product listing management.</p>
+                    <a>
+                        <img src="skill/inaproc.png" >
+                    </a>
+                </div>
+                <div class="card">
+                   <span class="badge badge-ungu">Intership Data Analysis PT. Sariling</span>
+                   <h3>Documentation</h3>
+                    <h2>Microsoft Office Suite (Word, PPT)</h2>
+                    <p>Creating formal reports, business presentations, and administrative documents.</p>
+                </div>
+                <div class="card">
+                   <span class="badge badge-ungu">Intership Data Analysis PT. Sariling</span>
+                   <h3>Documentation</h3>
+                    <h2>Google Workspace.</h2>
+                    <p>Real-time team collaboration using Drive, Docs, Sheets, and Slides.</p>
+                </div>
+                </div>
+        </div>
+    </section>
+
+    <script>
+        function scrollSlide(id, distance) {
+            document.getElementById(id).scrollBy({
+                left: distance,
+                behavior: 'smooth'
+            });
+        }
+    </script>
+
+
+</body>
+</html>

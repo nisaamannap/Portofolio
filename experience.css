@@ -1,0 +1,305 @@
+
+
+.info-panel {
+  position: fixed;
+  top: calc(60px + 20px); /* tepat bawah navbar */
+  left: 50%;
+  transform: translateX(-50%) translateY(-120%);
+  width: 420px;
+  background: #ffdef0;
+  border: 4px solid #d946aa;
+  border-radius: 16px;
+  padding: 20px;
+  text-align: center;
+  z-index: 1;
+  transition: 0.4s ease;
+}
+
+body {
+  margin: 0;
+  background: #111;
+  font-family: sans-serif;
+}
+
+.info-panel.show {
+  transform: translateX(-50%) translateY(0);
+}
+
+
+/* GAME WRAPPER */
+.game {
+  position: relative;
+  width: 100%;
+  height: 610px;
+  overflow: hidden;
+  background: linear-gradient(#5a5a8a, #2c2c54);
+}
+
+/* WORLD */
+.world {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: var(--world-width);
+  height: 100%;
+}
+
+.layer {
+  position: absolute;
+  left: 0;
+  width: var(--world-width);
+  overflow: hidden;
+  background-repeat: repeat-x;
+}
+
+.layer img {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  image-rendering: pixelated;
+}
+
+:root {
+  --world-width:7000px;
+}
+
+
+.sky {
+   position: absolute;
+  bottom: 0;
+  width: var(--world-width);
+  height: 1900px;
+  background-image: url("experience/1.Sky_free.png");
+  background-repeat: repeat-x;
+  background-size: cover;
+}
+
+.mountain {
+  position: absolute;
+  bottom: 0;
+  width: var(--world-width);
+  height: 450px;
+  background-image: url("experience/2.Mountains.png");
+  background-repeat: repeat-x;
+  background-size: auto 100%;
+}
+
+.forest {
+  position: absolute;
+  bottom: 0;
+  width: var(--world-width);
+  height: 500px;
+  background-image: url("experience/3.Trees_back.png");
+  background-repeat: repeat-x;
+  background-size: auto 100%;
+}
+
+.city {
+  position: absolute;
+  bottom: 0;
+  width: var(--world-width);
+  height: 300px;
+  background-image: url("experience/4.Buildings.png");
+  background-repeat: repeat-x;
+  background-size: auto 100%;
+}
+
+.river {
+  position: absolute;
+  bottom: 0;
+  width: var(--world-width);
+  height: 280px;
+  background-image: url("experience/5.River.png");
+  background-repeat: repeat-x;
+  background-size: auto 100%;
+}
+
+.road {
+  position: absolute;
+  bottom: 0;
+  width: var(--world-width);
+  height: 250px;
+  background-image: url("experience/6.Sidewalk.png");
+  background-repeat: repeat-x;
+  background-size: auto 100%;
+}
+
+
+
+/* CHARACTER */
+#character {
+  position: absolute;
+  bottom: 0;
+  left: 100px;
+  width: 100px;
+  z-index: 5;
+}
+
+/* FLIP KHUSUS ARAH */
+#charFlip {
+  width: 100%;
+  transform-origin: center;
+}
+
+/* SPRITE KHUSUS ANIMASI */
+#charSprite {
+  width: 100%;
+  animation: bob 0.4s infinite alternate;
+}
+
+/* bob TIDAK pakai transform scale/rotate */
+@keyframes bob {
+  from { translate: 0 0; }
+  to   { translate: 0 -4px; }
+}
+
+#finishFlag {
+  position: absolute;
+  bottom: -15px;
+  left: 6500px; /* ujung world */
+  width: 300px;
+  z-index: 6;
+  animation: wave 0.6s infinite alternate;
+}
+
+@keyframes wave {
+  from { transform: rotate(1deg); }
+  to   { transform: rotate(-1deg); }
+}
+
+
+/*Gedung*/
+.building {
+  position: relative;
+  bottom: -140px;
+  width: 260px;
+  z-index: 10;
+  pointer-events: none; /* 🔥 PENTING */
+}
+
+/*
+uilding:nth-child(1) { left: 1000px; }
+.building:nth-child(2) { left: 2000px; }
+.building:nth-child(3) { left: 3000px; }
+*/
+
+
+
+/* CONTROLS */
+.controls {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 16px;
+  z-index: 100;
+}
+
+/* BUTTON BASE */
+.controls button {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 14px 22px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+
+  background: linear-gradient(135deg, #ff7ac8, #c850c0);
+  color: white;
+
+  box-shadow: 
+    0 6px 0 #8b2c7a,
+    0 12px 20px rgba(0,0,0,0.25);
+
+  transition: 
+    transform 0.1s ease,
+    box-shadow 0.1s ease,
+    filter 0.2s;
+}
+
+/* HOVER */
+.controls button:hover {
+  filter: brightness(1.1);
+}
+
+/* ACTIVE / DIPENCET */
+.controls button:active {
+  transform: translateY(6px);
+  box-shadow: 
+    0 2px 0 #7e349d,
+    0 6px 12px rgba(0,0,0,0.2);
+}
+
+/* OPTIMALISASI GAME UNTUK MOBILE */
+
+@media (max-width: 932px) {
+    /* 1. Sesuaikan Tinggi Game agar tidak memakan seluruh layar portrait */
+    .game {
+        height: 350px; /* Lebih pendek di mobile agar UI lain terlihat */
+    }
+
+    /* 2. Perkecil Karakter & Objek */
+    #character {
+        width: 60px; /* Karakter lebih kecil agar dunianya terasa luas */
+        left: 50px;
+    }
+
+    .building {
+        width: 150px;
+        bottom: -80px; /* Sesuaikan posisi gedung */
+    }
+
+    /* 3. Atur Background Layers agar tidak pecah */
+    .layer img, .mountain, .forest, .city, .river, .road {
+        height: 100% !important;
+        background-size: auto 100%;
+    }
+
+    /* 4. Perbaiki Info Panel agar tidak menutupi seluruh layar */
+    .info-panel {
+        width: 90%;
+        font-size: 14px;
+        padding: 15px;
+    }
+
+    /* 5. Kontrol Tombol (Besarkan sedikit agar mudah ditekan jari) */
+    .controls {
+        bottom: 10px;
+        gap: 10px;
+    }
+
+    .controls button {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+}
+/* Pesan ini hanya muncul jika HP dalam posisi Portrait */
+#rotate-device {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: #d946aa;
+    color: white;
+    z-index: 9999;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+@media (max-width: 932px) and (orientation: portrait) {
+    #rotate-device {
+        display: flex; /* Muncul saat HP berdiri */
+    }
+    .game, .controls {
+        display: none; /* Sembunyikan game saat HP berdiri */
+    }
+}
+
+@media (max-height: 500px) and (orientation: landscape) {
+    .navbar { display: none; } /* Sembunyikan navbar agar layar penuh untuk game */
+    .game { margin-top: 0; height: 100vh; }
+}

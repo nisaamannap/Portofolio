@@ -1,0 +1,236 @@
+:root {
+  --wood-color: #5d3a1a;
+  --paper-color: #f3d18c;
+  --paper-darker: #e0bb6b;
+  --navbar-height: 190px;
+}
+
+body {
+  margin: 0;
+  min-height: 90vh;
+  display: flex;
+  justify-content: center;
+  /* Hapus align-items: center; */
+  align-items: flex-start; /* Konten mulai dari atas */
+  padding-top: calc(var(--navbar-height) + 20px); /* 20px jarak */
+  background-image: url("learning/newbg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  overflow-x: hidden;
+}
+
+.content {
+ /*aku lupa fungsinya~*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  position: relative;
+}
+/* ga jadi ini span
+.building span {
+  display: block;
+  margin-top: -10px;
+  font-weight: 900;
+  width: 100%;
+  align-items: center; 
+  transition: all 0.5s ease-in-out;
+  flex-direction: left; 
+}
+*/
+
+/* Kertas utama */
+.scroll-container {
+  width: 400px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: -55px;
+  cursor: pointer;
+  margin-bottom: 50px;
+  z-index: 10;
+}
+
+/* Kayu Penyangga (Atas & Bawah) */
+.scroll-roller {
+  width: 110%;
+  height: 30px;
+  background: linear-gradient(to bottom, #f807c4, #f66cd8, #f807c4);
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  position: relative;
+  z-index: 2;
+}
+
+/* Gagang Kayu (Kiri & Kanan) */
+.scroll-roller::before, .scroll-roller::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 15px;
+  background: var(--wood-color);
+  border-radius: 5px;
+}
+
+.scroll-roller::before { left: -45px; }
+.scroll-roller::after { right: -45px; }
+
+
+
+/* Bagian Kertas */
+.scroll-paper {
+  width: 100%;
+  height: 500px; /*Tinggi kertas ubah Oke~*/
+  overflow-y: auto; 
+  transition: all 0.5s ease-in-out;
+  background-color: #f3d18c;
+  scrollbar-width: thin;
+  scrollbar-color: #5d3a1a transparent;
+
+  /* Sisa dekorasi lainnya >.</ */
+  background-color: #f3d18c;
+  background-image: 
+    linear-gradient(to right, rgba(0,0,0,0.05) 0%, transparent 5%, transparent 95%, rgba(0,0,0,0.05) 100%),
+    linear-gradient(#e0bb6b 0%, #f3d18c 10%, #f3d18c 90%, #e0bb6b 100%);
+  padding: 20px 30px;
+  box-sizing: border-box;
+  font-family: 'Georgia', serif;
+  color: #5d3a1a;
+}
+
+/* Scroll bar berwarna ~.~ */
+.scroll-paper::-webkit-scrollbar {
+  width: 6px;
+}
+.scroll-paper::-webkit-scrollbar-thumb {
+  background: #5d3a1a;
+  border-radius: 10px;
+}
+
+/* Keadaan Tertutup */
+/* Modifikasi pada keadaan tertutup */
+.scroll-container.closed .scroll-paper {
+  height: 40px;
+  width: 40%;
+  min-height: 20px;
+  padding-top: 0;
+  padding-bottom: 0;
+  overflow: hidden;      /* Sembunyi konten~ */
+  margin-top: 5px;      /* kayu rapat~ atas`*/
+  margin: -5px auto;
+  margin-bottom: -5px;   /* kayu rapat bawah_ */
+  transition: all 0.5s ease-in-out;
+  border-top: 1px solid rgba(0,0,0,0.2);
+  border-radius: 5px;
+  border-bottom: 1px solid rgba(0,0,0,0.2);
+
+  /*posisi teks *\_>.<_/* */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.btn-view {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 6px 12px;
+    background-color: #d946aa; /* Pink senada contact h1 */
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+.btn-view:hover {
+    background-color: #be185d;
+    transform: scale(1.05);
+}
+
+.scroll-divider {
+    margin: 20px 0;
+    border: none;
+    border-top: 1px dashed #d946aa; /* Garis putus-putus lucu */
+    opacity: 0.5;
+}
+
+/* Teks yang muncul saat tertutup */
+.scroll-container.closed .scroll-paper::before {
+  content: "Courses"; /* Ubah Oke */
+  font-size: 10px;
+  font-weight: bold;
+  color: rgba(0,0,0,0.5);
+  position: absolute;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+/* Menghilangkan bayangan teks saat tertutup agar rapi */
+.scroll-container.closed .scroll-paper * {
+  opacity: 0;
+}
+
+/* Animasi transisi kayu saat menutup/membuka */
+.scroll-roller {
+  transition: transform 0.5s ease-in-out;
+}
+
+/*Anak panah (Kiri&Kanan)*/
+.arrow {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-top: 10px solid #c084fc;
+    border-right: 10px solid #c084fc;
+    opacity: 1;
+    transition: 0.3s;
+    bottom: 45%;
+    transform: translateY(-50%);
+    z-index: 10;
+    align-items: center;
+}
+
+.arrow.left {
+    transform:  rotate(-135deg) scale(1.1);
+    left: 40px;
+    
+
+} 
+
+.arrow.right {
+    transform: rotate(45deg) scale(1.1);
+    right: 40px;
+}
+
+.arrow:hover {
+    opacity: 1;
+    border-color: #9333ea;
+    transform: scale(1.1) rotate(var(--rotate));
+}
+/* Media query untuk about section di mobile */
+@media (max-width: 768px) {
+    .about {
+        grid-template-columns: 1fr; /* Stack vertikal di mobile */
+        height: auto;
+        margin-top: 90px;
+    }
+    
+    .about-text {
+        padding: 30px;
+    }
+    
+    .about-title {
+        font-size: 48px;
+    }
+    
+    .photo-card img {
+        width: 150px;
+    }
+}
+
+

@@ -1,0 +1,165 @@
+/*Body*/
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    /* Gunakan warna background yang sama dengan sisi kanan (wrapper foto) 
+       sebagai warna dasar cadangan */
+    background-color: #fde6f3; 
+    overflow-x: hidden; /* Mencegah scroll ke samping yang bikin putih di kanan */
+}
+
+/* LAYOUT */
+.vision {
+    position: relative;
+    height: 100vh;
+    background: #f7cfe5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* CIRCLE CONTAINER */
+.vision-circle {
+    position: absolute;
+    width: 520px;
+    height: 520px;
+    border-radius: 50%;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    background-image: url("Foto/rumah.jpeg");
+    background-size: cover;
+    background-position: center;
+
+    filter: blur(1px);
+    z-index: 1;
+}
+
+
+/* IMAGE LAYER*/
+.vision-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    /* blur halus */
+    filter: blur(0.5px);
+    transform: scale(1.05);
+}
+.vision-circle::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: rgba(253, 182, 224, 0.25);
+}
+
+.vision-circle::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: radial-gradient(
+        circle,
+        rgba(241, 83, 230, 0) 55%,
+        rgba(253,230,243,0.9) 80%,
+       rgba(235, 195, 218, 0.6) 100%
+    );
+}
+
+
+/* TEXT CONTENT*/
+.vision-text {
+    position: relative;
+    z-index: 5;
+    max-width: 620px;
+    text-align: center;
+    margin-top: 80px; /* JANGAN pakai transform */
+}
+
+
+.vision-text h1 {
+    font-size: 70px;
+    font-weight: 900;
+    letter-spacing: 3px;
+
+    /* PATTERN */
+    background: 
+        radial-gradient(#9333ea 30%, transparent 21%) 0 0 / 8px 8px,
+        radial-gradient(#c084fc 80%, transparent 21%) 4px 4px / 8px 8px;
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+
+    /* OUTLINE PUTIH */
+    -webkit-text-stroke: 3px #9333ea;
+ bottom: -50PX;
+}
+
+.quote {
+    font-size: 30px;
+    line-height: 1.7;
+    color: #000000;
+}
+
+
+
+/*GARIS BATAS*/
+.divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1px 0 1px;
+    gap: -15px;
+}
+
+.divider span {
+    width: 200px;
+    height: 8px;
+    background: #9333ea;
+    opacity: 0.7;
+}
+
+.divider i {
+    font-style: normal;
+    font-size: 40px;
+    color: #d946aa;
+}
+
+
+/* ARROWS */
+
+.arrow {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-top: 10px solid #c084fc;
+    border-right: 10px solid #c084fc;
+    opacity: 1;
+    transition: 0.3s;
+    bottom: 45%;
+    transform: translateY(-50%);
+}
+
+.arrow.left {
+    transform:  rotate(-135deg) scale(1.1);
+    left: 40px;
+    
+
+} 
+
+.arrow.right {
+    transform: rotate(45deg) scale(1.1);
+    right: 40px;
+}
+
+.arrow:hover {
+    opacity: 1;
+    border-color: #9333ea;
+    transform: scale(1.1) rotate(var(--rotate));
+}

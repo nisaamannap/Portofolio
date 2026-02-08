@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>My Vision</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="vision.css">
+<link rel="stylesheet" href="navbar.css"> 
+</head>
+
+<body>
+  
+<!-- NAVBAR -->
+<div id="navbar"></div>
+<script>
+fetch("navbar.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("navbar").innerHTML = data;
+
+    const currentPage = window.location.pathname.split("/").pop();
+
+    document.querySelectorAll(".navbar a").forEach(link => {
+      const pages = link.getAttribute("data-pages").split(",");
+
+      if (pages.includes(currentPage)) {
+        link.classList.add("active");
+      }
+    });
+  });
+</script>
+
+
+
+<!-- Isi -->
+
+<section class="vision">
+  <a href="Myprinciple.html" class="arrow left"></a>
+
+    <!-- Background Image -->
+    <div class="vision-circle">
+     
+    </div>
+
+    <!-- Text Content -->
+    <div class="vision-text">
+      <h1>My Vision</h1>
+
+      <div class="divider">
+      <span></span>
+      <i>🍀</i>
+      <span></span>
+      </div>
+
+      <p class="quote">
+        <b>Building a Simple, Smart, and Meaningful Life.</b><br>
+        My vision is to become a versatile professional who creates efficient systems<br>
+        not just for business, but for a better quality of life. I dream of creating a balanced life where technology and nature work together, <br>
+        allowing me to live independently, stay happy, and be useful to others through my work.</p>
+    </div>
+  
+  <a href="Aboutme.html" class="arrow right"></a>
+
+</section>
+
+</body>
+</html>

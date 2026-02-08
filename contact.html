@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Work Experience</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="navbar.css"> 
+</head>
+<body>
+<!-- NAVBAR -->
+<div id="navbar"></div>
+<script>
+fetch("navbar.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("navbar").innerHTML = data;
+
+    const currentPage = window.location.pathname.split("/").pop();
+
+    document.querySelectorAll(".navbar a").forEach(link => {
+      const pages = link.getAttribute("data-pages").split(",");
+
+      if (pages.includes(currentPage)) {
+        link.classList.add("active");
+      }
+    });
+  });
+</script>
+
+
+<!-- Body -->
+<section class="contact">
+  <h1>Get in Touch</h1>
+
+  <div class="contact-list">
+
+  <div class="item">
+    <i class="fa-brands fa-linkedin"></i>
+    <a href="https://www.linkedin.com/in/nisa-amanna-pusponegoro-9ab274225/" target="_blank">
+      Nisa Amanna Pusponegoro
+    </a>
+  </div>
+
+  <div class="item">
+    <i class="fa-solid fa-phone"></i>
+    <a href="tel:+6282129809805">
+      +62 821-2980-9805
+    </a>
+  </div>
+
+  <div class="item">
+    <i class="fa-brands fa-whatsapp"></i>
+    <a href="https://wa.me/6282123333871" target="_blank">
+      +62 821-2333-3871
+    </a>
+  </div>
+
+  <div class="item">
+    <i class="fa-solid fa-envelope"></i>
+    <a href="mailto:nisaamannap@gmail.com">
+      nisaamannap@gmail.com
+    </a>
+  </div>
+
+</div>
+
+
+  <!-- BUTTON BACK -->
+  <a href="index.html" class="back-home">
+  💗<span class="bye">BYE</span> 👋
+</a>
+
+</section>
+
+</body>
+</html>

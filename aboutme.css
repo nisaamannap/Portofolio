@@ -1,0 +1,157 @@
+
+/*HALAMAN ABOUT ME*/
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-color: #fde6f3; 
+    overflow-x: hidden; 
+}
+
+/* ABOUT SECTION */
+.about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: calc(100vh - 90px); 
+    width: 100%;
+    margin-top: 90px;
+    background: #fde6f3; /*  BACKGROUND  (Warna sisi kanan) */
+    overflow: hidden; 
+}
+
+/* Kiri */
+.about-text {
+    background: #fbcfe8;
+    padding: 60px 90px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    font-size: large; /*ganti ukuran*/
+    font-family: 'poppins', sans-serif ;
+   
+}
+
+.intro {
+    font-family: 'Pacifico', cursive;
+    font-size: 30px;
+    margin-bottom: -50px;
+    margin-top: -50px;
+}
+
+.about-title {
+    font-size: 70px;
+    font-weight: 900;
+    letter-spacing: 3px;
+
+    /* PATTERN */
+    background: 
+        radial-gradient(#fb0594 30%, transparent 21%) 0 0 / 8px 8px,
+        radial-gradient(#f3bfd9 80%, transparent 21%) 4px 4px / 8px 8px;
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+
+    -webkit-text-stroke: 3px #f807c4;
+
+}
+
+.about-image {
+    position: relative; 
+    background: #e0a6f9; /*  background, sesuaikan */
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+}
+/* kanan (PHOTO WRAPPER) */
+.about-photo-wrapper {
+    position: relative;
+    background: #fde6f3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+} 
+
+.photo-frame {
+    width: 300px;
+    height: 420px;
+
+    border: 6px solid #c084fc;
+    border-radius: 180px 180px 40px 40px;
+
+    overflow: hidden;
+    background: #f5d0fe;
+}
+
+.photo-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.photo-info {
+    width: 300px;
+    margin-top: -6px; 
+    padding: 14px 10px;
+
+    background: #c084fc;
+    text-align: center;
+    font-size: 14px;
+}
+
+.arrow {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-top: 10px solid #c084fc;
+    border-right: 10px solid #c084fc;
+    opacity: 1;
+    transition: 0.3s;
+    bottom: 45%;
+    transform: translateY(-50%);
+}
+
+.arrow.left {
+    transform:  rotate(-135deg) scale(1.1);
+    left: 40px;
+    
+
+} 
+
+.arrow.right {
+    transform: rotate(45deg) scale(1.1);
+    right: 40px;
+}
+
+.arrow:hover {
+    opacity: 1;
+    border-color: #9333ea;
+    transform: scale(1.1) rotate(var(--rotate));
+
+}
+
+/* Media query untuk about section di mobile */
+@media (max-width: 768px) {
+    .about {
+        grid-template-columns: 1fr; 
+        height: auto;
+        margin-top: 90px;
+    }
+    
+    .about-text {
+        padding: 30px;
+    }
+    
+    .about-title {
+        font-size: 48px;
+    }
+    
+    .photo-card img {
+        width: 150px;
+    }
+}
+
