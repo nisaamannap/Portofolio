@@ -1,3 +1,4 @@
+
 /* 1. VARIABEL & RESET */
 :root {
     --primary-text: #111b21;
@@ -20,12 +21,10 @@
 }
 
 body {
-    body {
-  padding-top: calc(var(--navbar-height) + 20px); 
+  padding-top: 80px; /* atau sesuai tinggi navbar */
+  color: var(--primary-text);
 }
-    color: var(--primary-text);
-    line-height: 1.5;
-}
+
 
 /* 2. LAYOUT UTAMA */
 .skill-section {
@@ -257,11 +256,13 @@ body {
     .container {
         flex-direction: column; /* Teks di atas, Slider di bawah */
         gap: 20px;
+        overflow-x: hidden;
     }
 
     .content-left {
         flex: 0 0 auto;
         width: 100%;
+        max-width: 100%;
         text-align: center;
     }
 
@@ -278,11 +279,19 @@ body {
         margin-bottom: 10px;
     }
 
+    .content-right {
+    width: 100%;
+    padding: 10px 0;
+    gap: 16px;
+  }
+
+
     /* KARTU SKILL (Sangat Penting!) */
     .card {
         flex: 0 0 280px; /* Lebar kartu tetap yang aman untuk semua HP */
         padding: 25px;
         border-radius: 20px;
+        margin: 0 auto;
     }
 
     .card h2 {
